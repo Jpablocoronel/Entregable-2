@@ -21,9 +21,6 @@ form.addEventListener('submit', function (event) {
         saveDataToLocalStorage();
         renderTable();
         form.reset();
-
-    }else{
-        alert('TODOS LOS DATOS SON OBLIGATORIOS')
     }
 })
 
@@ -51,6 +48,9 @@ function renderTable() {
         editButton.textContent = "Editar";
         deleteButton.textContent = "Eliminar";
 
+        editButton.addEventListener('click', function(){
+            editData(index);
+        })
         deleteButton.addEventListener('click', function(){
             deleteData(index);
         })
